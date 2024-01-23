@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Hotel3</string>
+    <string name="booking">Бронирование</string>
+    <string name="hotel">Отель</string>
+    <string name="about_the_hotel">Об отеле</string>
+    <string name="btnAppartment">К выбору номера</string>
+    <string name="btnNotInclude">Что не включено</string>
+    <string name="btnInclude">Что включено</string>
+    <string name="btnСonveniences">Удобства</string>
+    <string name="btnСonvenience">Удобство</string>
+    <string name="btnChoose">Выбрать номер</string>
+
+</resources>

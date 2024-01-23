@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hotelFragment">
+
+
+    <fragment
+        android:id="@+id/hotelFragment"
+        android:name="ru.stan.hotel3.fragments.HotelFragment"
+        android:label="HotelFragment" >
+        <action
+            android:id="@+id/action_hotelFragment_to_numberFragment"
+            app:destination="@id/numberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberFragment"
+        android:name="ru.stan.hotel3.fragmentsNumber.numberFragment"
+        android:label="fragment_number"
+        tools:layout="@layout/fragment_number" />
+</navigation>
