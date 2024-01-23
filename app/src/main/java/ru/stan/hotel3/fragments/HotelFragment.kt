@@ -119,6 +119,7 @@ class HotelFragment : Fragment() {
             //navigation
             btnRoom.setOnClickListener {
                 findNavController().navigate(R.id.action_hotelFragment_to_numberFragment)
+                viewModel.token.value = idAdress.text.toString()
             }
 
 
