@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.HotelFragment">
 
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -73,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/container1"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:layout_alignStart="@id/container1"
             android:layout_marginTop="8dp"
             android:textStyle="bold"/>
@@ -107,6 +108,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="165dp"
+            android:layout_marginEnd="166dp"
+            android:visibility="visible" />
     </RelativeLayout>
 
     <RelativeLayout

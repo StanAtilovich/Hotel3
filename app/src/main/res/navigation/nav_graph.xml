@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/numberFragment"
-        android:name="ru.stan.hotel3.fragmentsNumber.numberFragment"
+        android:name="ru.stan.hotel3.fragmentsNumber.NumberFragment"
         android:label="fragment_number"
         tools:layout="@layout/fragment_number" />
 </navigation>

@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import ru.stan.hotel3.R
 
-class numberFragment : Fragment() {
+class NumberFragment : Fragment() {
 
     private lateinit var viewModel: NumberViewModel
 
@@ -25,6 +25,6 @@ class numberFragment : Fragment() {
         // TODO: Use the ViewModel
     }
     companion object {
-        fun newInstance() = numberFragment()
+        fun newInstance() = NumberFragment()
     }
 }

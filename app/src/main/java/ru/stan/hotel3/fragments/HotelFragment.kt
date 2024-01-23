@@ -24,8 +24,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.stan.hotel3.data.HotelData
 
-// private val viewModel: HotelViewModel by activityViewModels()
+
 class HotelFragment : Fragment() {
+    private val viewModel: HotelViewModel by activityViewModels()
     private lateinit var rootView: View
     private var _binding: FragmentHotelBinding? = null
     private val binding get() = _binding!!
@@ -44,6 +45,8 @@ class HotelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRetrofit()
+        // Показать ProgressBar при начале загрузки
+        binding.progressBar.visibility = View.VISIBLE
         loadDataAndPopulateUI()
     }
 
@@ -84,6 +87,10 @@ class HotelFragment : Fragment() {
             withContext(Dispatchers.Main) {
                 populateUI(hotel, firstPart, peculiarities, peculiaritiesTextViews)
                 setupImageSlider(hotel.image_urls)
+
+                // Скрыть ProgressBar после завершения загрузки
+                binding.progressBar.visibility = View.GONE
+
 
 
             }
