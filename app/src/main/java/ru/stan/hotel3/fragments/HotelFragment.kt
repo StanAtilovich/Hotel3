@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -19,10 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import ru.stan.hotel3.R
 import ru.stan.hotel3.adapter.ImagePagerAdapter
 import ru.stan.hotel3.api.HotelApi
-import ru.stan.hotel3.databinding.FragmentHotelBinding
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import ru.stan.hotel3.data.HotelData
+import ru.stan.hotel3.databinding.FragmentHotelBinding
 
 
 class HotelFragment : Fragment() {
@@ -47,9 +43,25 @@ class HotelFragment : Fragment() {
         setupRetrofit()
         // Показать ProgressBar при начале загрузки
         binding.progressBar.visibility = View.VISIBLE
-        loadDataAndPopulateUI()
-    }
 
+        viewModel.loadDataAndPopulateUI(hotelApi)
+        binding.progressBar.visibility = View.VISIBLE
+
+        viewModel.hotelData.observe(viewLifecycleOwner) { hotel ->
+            if (hotel != null) {
+                val firstPart = hotel.adress.split(",")[0]
+                val peculiaritiesTextViews = listOf(
+                    binding.root.findViewById<TextView>(R.id.peculiaritiesTextView),
+                    binding.root.findViewById<TextView>(R.id.peculiaritiesTextView2),
+                    binding.root.findViewById<TextView>(R.id.peculiaritiesTextView3),
+                    binding.root.findViewById<TextView>(R.id.peculiaritiesTextView4)
+                )
+                populateUI(hotel, firstPart, hotel.about_the_hotel.peculiarities, peculiaritiesTextViews)
+                setupImageSlider(hotel.image_urls)
+                binding.progressBar.visibility = View.GONE
+            }
+        }
+    }
     private fun setupRetrofit() {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
@@ -65,38 +77,6 @@ class HotelFragment : Fragment() {
 
         hotelApi = retrofit.create(HotelApi::class.java)
     }
-
-    private fun loadDataAndPopulateUI() {
-        CoroutineScope(Dispatchers.IO).launch {
-            val hotel = hotelApi.getAllHotel()
-            val peculiarities = hotel.about_the_hotel.peculiarities
-            val fullAddress = hotel.adress
-
-            //разделяем адрес на 2 строчки
-            val firstPart = fullAddress.split(",")[0]  // Берем первую часть адреса
-
-
-            //делим peculiarities на 4 части
-            val peculiaritiesTextViews = listOf(
-                rootView.findViewById<TextView>(R.id.peculiaritiesTextView),
-                rootView.findViewById<TextView>(R.id.peculiaritiesTextView2),
-                rootView.findViewById<TextView>(R.id.peculiaritiesTextView3),
-                rootView.findViewById<TextView>(R.id.peculiaritiesTextView4)
-            )
-
-            withContext(Dispatchers.Main) {
-                populateUI(hotel, firstPart, peculiarities, peculiaritiesTextViews)
-                setupImageSlider(hotel.image_urls)
-
-                // Скрыть ProgressBar после завершения загрузки
-                binding.progressBar.visibility = View.GONE
-
-
-
-            }
-        }
-    }
-
     private fun populateUI(
         hotel: HotelData,
         firstPart: String,
@@ -115,14 +95,11 @@ class HotelFragment : Fragment() {
             idminimalPrice.textSize = 24f
             idminimalPrice.setTypeface(null, Typeface.BOLD)
 
-
             //navigation
             btnRoom.setOnClickListener {
                 findNavController().navigate(R.id.action_hotelFragment_to_numberFragment)
                 viewModel.token.value = idAdress.text.toString()
             }
-
-
             //отображение peculiarities
             val chunkedPeculiarities =
                 peculiarities.chunked(peculiarities.size / peculiaritiesTextViews.size)
@@ -134,23 +111,15 @@ class HotelFragment : Fragment() {
             }
         }
     }
-
     // //отображение картинок
     private fun setupImageSlider(imageUrls: List<String>) {
         val viewPager: ViewPager = rootView.findViewById(R.id.imageViewPager)
         val adapter = ImagePagerAdapter(imageUrls)
         viewPager.adapter = adapter
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-        fun newInstance(): HotelFragment {
-            return HotelFragment()
-        }
     }
 }
 
