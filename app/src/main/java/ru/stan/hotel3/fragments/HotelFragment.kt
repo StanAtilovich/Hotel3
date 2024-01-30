@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
@@ -22,7 +23,7 @@ import ru.stan.hotel3.databinding.FragmentHotelBinding
 
 
 class HotelFragment : Fragment() {
-    private val viewModel: HotelViewModel by viewModels()
+    private val viewModel: HotelViewModel by activityViewModels()
     private lateinit var rootView: View
     private var _binding: FragmentHotelBinding? = null
     private val binding get() = _binding!!

@@ -10,11 +10,8 @@ import ru.stan.hotel3.data.HotelData
 
 class HotelViewModel() : ViewModel() {
     val token = MutableLiveData<String>()
-
     private val _currentIndex = MutableLiveData<Int>()
-    val currentIndex: LiveData<Int> get() = _currentIndex
-
-    private val _hotelData = MutableLiveData<HotelData>()
+     private val _hotelData = MutableLiveData<HotelData>()
     val hotelData: LiveData<HotelData> get() = _hotelData
 
 
