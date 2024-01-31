@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import ru.stan.hotel3.R
 import ru.stan.hotel3.data.Room
 import ru.stan.hotel3.databinding.NumberItemBinding
@@ -16,9 +17,16 @@ class NumberAdapter : ListAdapter<Room, NumberAdapter.Holder>(Comparator()) {
 
         fun bind(room: Room) = with(binding) {
             nameNumer.text = room.name
-            priceNumber.text = room.price.toString()
+            priceNumber.text = "От " + room.price.toString() + " ₽ "
             pricePerNumber.text = room.price_per
-            peculiaritiesTextViewNumber.text = room.peculiarities.toString()
+            val peculiatiesList = room.peculiarities.toString().split(", ")
+            if (peculiatiesList.size >= 1) {
+                peculiaritiesTextViewNumber.text = peculiatiesList[0].replace("]", "").replace("[", "")
+            }
+            if (peculiatiesList.size >= 2) {
+                peculiaritiesTextView2Number.text = peculiatiesList[1].replace("]", "").replace("[", "")
+            }
+
         }
     }
 

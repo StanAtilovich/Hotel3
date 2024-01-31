@@ -9,5 +9,7 @@
     <string name="btnСonveniences">Удобства</string>
     <string name="btnСonvenience">Удобство</string>
     <string name="btnChoose">Выбрать номер</string>
+    <string name="ChooseRoom">Выбрать номер</string>
+    <string name="aboutTheRoom">Подробнее о номере</string>
 
 </resources>
