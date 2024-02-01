@@ -21,12 +21,20 @@ class NumberAdapter : ListAdapter<Room, NumberAdapter.Holder>(Comparator()) {
             pricePerNumber.text = room.price_per
             val peculiatiesList = room.peculiarities.toString().split(", ")
             if (peculiatiesList.size >= 1) {
-                peculiaritiesTextViewNumber.text = peculiatiesList[0].replace("]", "").replace("[", "")
+                peculiaritiesTextViewNumber.text =
+                    peculiatiesList[0].replace("]", "").replace("[", "")
             }
             if (peculiatiesList.size >= 2) {
-                peculiaritiesTextView2Number.text = peculiatiesList[1].replace("]", "").replace("[", "")
+                peculiaritiesTextView2Number.text =
+                    peculiatiesList[1].replace("]", "").replace("[", "")
             }
-
+            if (room.image_urls.isNotEmpty()) {
+                Glide.with(imageNumber)
+                    .load(room.image_urls[0]) // Предполагается, что вы используете Glide для загрузки изображений
+                    .placeholder(R.drawable.right_blue) // Изображение-заглушка во время загрузки
+                    .error(R.drawable.arrow_back) // Изображение-ошибка, если URL недействителен
+                    .into(imageNumber)
+            }
         }
     }
 

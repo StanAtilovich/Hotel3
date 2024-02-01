@@ -84,12 +84,11 @@ class NumberFragment : Fragment() {
         outState.putInt("viewPagerCurrentItem", viewPagerCurrentItem)
     }
     private fun setupImageSlider(imageUrls: List<String>) {
-        val viewPager: ViewPager? = binding.root.findViewById(R.id.imageNumber)
+        val viewPager: ViewPager? = binding.root.findViewById(R.id.imageNumber) // Используйте правильный ID для поиска ViewPager
         viewPager?.let {
             val adapter = ImagePagerAdapterRoom(imageUrls)
             it.adapter = adapter
         }
     }
-
 
 }
