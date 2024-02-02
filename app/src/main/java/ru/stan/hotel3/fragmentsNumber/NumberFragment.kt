@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.CoroutineScope
@@ -28,6 +29,7 @@ class NumberFragment : Fragment() {
     private val viewModel: HotelViewModel by activityViewModels()
     private lateinit var adapter: NumberAdapter
     private lateinit var hotelApi: HotelApi
+    private val numberViewModel: NumberViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,8 +50,12 @@ class NumberFragment : Fragment() {
         viewModel.token.observe(viewLifecycleOwner) { token ->
             view.findViewById<TextView>(R.id.intent).text = token
         }
-        setupRetrofit()
-
+        numberViewModel.roomList.observe(viewLifecycleOwner) { rooms ->
+            adapter.submitList(rooms)
+        }
+        if (numberViewModel.roomList.value == null) {
+            setupRetrofit()
+        }
     }
 
     private fun setupRetrofit() {
@@ -69,13 +75,10 @@ class NumberFragment : Fragment() {
         CoroutineScope(Dispatchers.IO).launch {
             val number = hotelApi.getRoom()
             withContext(Dispatchers.Main) {
-                binding.apply {
-                    adapter.submitList(number.rooms)
-                }
+                numberViewModel.setRoomList(number.rooms)
             }
         }
     }
-
 
 
 }

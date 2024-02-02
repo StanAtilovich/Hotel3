@@ -28,6 +28,10 @@ class BookingFragment : Fragment() {
     ): View {
         binding = FragmentBookingBinding.inflate(inflater, container, false)
 
+        binding.buttonBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         return binding.root
     }
 
