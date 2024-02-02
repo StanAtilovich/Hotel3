@@ -11,5 +11,7 @@
     <string name="btnChoose">Выбрать номер</string>
     <string name="ChooseRoom">Выбрать номер</string>
     <string name="aboutTheRoom">Подробнее о номере</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

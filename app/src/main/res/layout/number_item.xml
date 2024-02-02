@@ -15,13 +15,14 @@
             android:layout_height="200dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="0dp"
+            android:background="@drawable/rounded_corners_background"
             android:layout_marginEnd="16dp">
 
-            <ImageView
-                android:id="@+id/imageNumber"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imageRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/rounded_corners_background" />
+                android:background="@drawable/rounded_corners_background"
+                android:layout_height="200dp"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -123,11 +124,13 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/bockingBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/ChooseRoom" />
+            android:text="@string/ChooseRoom"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
 
     </LinearLayout>

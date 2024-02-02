@@ -22,5 +22,17 @@
         <action
             android:id="@+id/action_numberFragment_to_hotelFragment"
             app:destination="@id/hotelFragment" />
+        <action
+            android:id="@+id/action_numberFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="ru.stan.hotel3.bookingFragment.BookingFragment"
+        android:label="fragment_booking"
+        tools:layout="@layout/fragment_booking" >
+        <action
+            android:id="@+id/action_bookingFragment_to_numberFragment"
+            app:destination="@id/numberFragment" />
     </fragment>
 </navigation>

@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager.widget.ViewPager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,7 +18,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.stan.hotel3.R
-import ru.stan.hotel3.adapter.ImagePagerAdapterRoom
 import ru.stan.hotel3.adapter.NumberAdapter
 import ru.stan.hotel3.api.HotelApi
 import ru.stan.hotel3.databinding.FragmentNumberBinding
@@ -31,13 +28,12 @@ class NumberFragment : Fragment() {
     private val viewModel: HotelViewModel by activityViewModels()
     private lateinit var adapter: NumberAdapter
     private lateinit var hotelApi: HotelApi
-    private var viewPagerCurrentItem: Int = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentNumberBinding.inflate(inflater, container, false)
-        adapter = NumberAdapter()
+        adapter = NumberAdapter(this)
         binding.rcViewHotel.layoutManager = LinearLayoutManager(requireContext())
         binding.rcViewHotel.adapter = adapter
         binding.buttonBack.setOnClickListener {
@@ -53,6 +49,7 @@ class NumberFragment : Fragment() {
             view.findViewById<TextView>(R.id.intent).text = token
         }
         setupRetrofit()
+
     }
 
     private fun setupRetrofit() {
@@ -74,21 +71,11 @@ class NumberFragment : Fragment() {
             withContext(Dispatchers.Main) {
                 binding.apply {
                     adapter.submitList(number.rooms)
-                    setupImageSlider(number.rooms.first().image_urls)
                 }
             }
         }
     }
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putInt("viewPagerCurrentItem", viewPagerCurrentItem)
-    }
-    private fun setupImageSlider(imageUrls: List<String>) {
-        val viewPager: ViewPager? = binding.root.findViewById(R.id.imageNumber) // Используйте правильный ID для поиска ViewPager
-        viewPager?.let {
-            val adapter = ImagePagerAdapterRoom(imageUrls)
-            it.adapter = adapter
-        }
-    }
+
+
 
 }

@@ -20,7 +20,7 @@ class ImagePagerAdapter(private val imageUrls: List<String>, private val viewMod
         Glide.with(container)
             .load(imageUrls[position])
             .transform(
-                RoundedCornersTransformation(40, 0)
+                RoundedCornersTransformation(100, 10)
             )
             .into(imageView)
         container.addView(imageView)

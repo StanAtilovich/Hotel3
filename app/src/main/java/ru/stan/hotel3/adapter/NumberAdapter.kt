@@ -3,16 +3,22 @@ package ru.stan.hotel3.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.stan.hotel3.R
 import ru.stan.hotel3.data.Room
 import ru.stan.hotel3.databinding.NumberItemBinding
+import ru.stan.hotel3.fragmentsNumber.NumberFragment
 
-class NumberAdapter : ListAdapter<Room, NumberAdapter.Holder>(Comparator()) {
-    class Holder(view: View) : RecyclerView.ViewHolder(view) {
+class NumberAdapter(private val fragment: NumberFragment) :
+    ListAdapter<Room, NumberAdapter.Holder>(Comparator()) {
+    class Holder(view: View, private val fragment: NumberFragment) : RecyclerView.ViewHolder(view) {
         private val binding = NumberItemBinding.bind(view)
 
         fun bind(room: Room) = with(binding) {
@@ -29,11 +35,15 @@ class NumberAdapter : ListAdapter<Room, NumberAdapter.Holder>(Comparator()) {
                     peculiatiesList[1].replace("]", "").replace("[", "")
             }
             if (room.image_urls.isNotEmpty()) {
-                Glide.with(imageNumber)
-                    .load(room.image_urls[0]) // Предполагается, что вы используете Glide для загрузки изображений
-                    .placeholder(R.drawable.right_blue) // Изображение-заглушка во время загрузки
-                    .error(R.drawable.arrow_back) // Изображение-ошибка, если URL недействителен
-                    .into(imageNumber)
+                val imageAdapter = ImageAdapter(room.image_urls)
+                imageRecyclerView.apply {
+                    layoutManager =
+                        LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                    adapter = imageAdapter
+                }
+            }
+            bockingBtn.setOnClickListener {
+                fragment.findNavController().navigate(R.id.action_numberFragment_to_bookingFragment)
             }
         }
     }
@@ -50,7 +60,7 @@ class NumberAdapter : ListAdapter<Room, NumberAdapter.Holder>(Comparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.number_item, parent, false)
-        return Holder(view)
+        return Holder(view, fragment)
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
