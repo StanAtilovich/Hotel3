@@ -71,13 +71,19 @@ class BookingFragment : Fragment() {
                 binding.idAdressLine1View.text = booking.hotel_adress
                 binding.idRating.text = booking.horating.toString()
                 binding.idRatingName.text = booking.rating_name
-
+                binding.departure.text = booking.departure
+                binding.arrivalCountry.text = booking.arrival_country
+                binding.numberOfNights.text = booking.number_of_nights.toString() + " ночей"
+                binding.room.text = booking.room
+                binding.nutrion.text = booking.nutrition
+                binding.dataStartStop.text =
+                    booking.tour_date_start + " - " + booking.tour_date_stop
                 //разделение до запятой и отображение
                 val parts = booking.hotel_adress.split(",")
                 val addressPart = parts.firstOrNull()
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     binding.idAdress.text = addressPart
-
+                    binding.hotelAdress.text = addressPart
                 }
             }
         }
