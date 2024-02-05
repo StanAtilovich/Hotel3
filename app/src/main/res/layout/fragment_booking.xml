@@ -309,9 +309,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:textStyle="bold"
-                    android:textSize="24dp"
                     android:text="Информация о покупателе"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -328,8 +328,8 @@
                     app:helperTextTextColor="@color/red"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:passwordToggleEnabled="true"
-                    app:layout_constraintTop_toBottomOf="@id/about_costumer">
+                    app:layout_constraintTop_toBottomOf="@id/about_costumer"
+                    app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/phoneText"
@@ -365,10 +365,84 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <LinearLayout
+                android:id="@+id/touristDetailsLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corners_background">
 
+                <TextView
+                    android:id="@+id/about_costumer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Первый турист"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/buttonAddTourist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Добавить туриста" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/touristDetailsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/editTextName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Имя"
+                    />
+
+                <EditText
+                    android:id="@+id/editTextSecondName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Фамилия"
+                    />
+
+                <EditText
+                    android:id="@+id/editBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Дата рождения"
+                    />
+
+                <EditText
+                    android:id="@+id/editGrazdan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Гражданство"
+                    />
+
+                <EditText
+                    android:id="@+id/editPassport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Паспорт"
+                    />
+
+                <EditText
+                    android:id="@+id/editPassportFinish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Срок действия паспорта"
+                   />
+            </LinearLayout>
         </LinearLayout>
 
 
-</ScrollView>
+    </ScrollView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

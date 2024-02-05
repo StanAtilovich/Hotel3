@@ -46,6 +46,13 @@ class BookingFragment : Fragment() {
         binding.buttonBack.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        // Показывать запись о клиенте
+        binding.buttonAddTourist.setOnClickListener {
+            // Обработка нажатия на кнопку "Добавить туриста"
+            binding.touristDetailsLayout.visibility = View.VISIBLE
+        }
+
         setupRetrofit()
         phonefocusListener()
         emailfocusListener()
