@@ -49,7 +49,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,10 +68,10 @@
                 tools:layout_editor_absoluteX="0dp">
 
                 <LinearLayout
-                    android:layout_marginStart="10dp"
                     android:id="@+id/container1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded_corners_yellow">
 
@@ -134,17 +134,17 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_gravity="center_vertical"
-                    android:gravity="center"> <!-- Центрирование элементов по вертикали -->
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
 
                     <TextView
                         android:id="@+id/text_departure"
-                        android:layout_height="wrap_content"
                         android:layout_width="100dp"
+                        android:layout_height="wrap_content"
                         android:text="Вылет из" />
 
 
@@ -152,18 +152,18 @@
                         android:id="@+id/departure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Москвы"
-                        android:layout_marginStart="100dp"/>
+                        android:layout_marginStart="100dp"
+                        android:text="Москвы" />
                 </LinearLayout>
 
 
                 <LinearLayout
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"> <!-- Центрирование элементов по вертикали -->
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
 
                     <TextView
                         android:id="@+id/text_arrival_country"
@@ -176,17 +176,17 @@
                         android:id="@+id/arrival_country"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Египед"
-                        android:layout_marginStart="100dp"/>
+                        android:layout_marginStart="100dp"
+                        android:text="Египед" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"> <!-- Центрирование элементов по вертикали -->
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
 
                     <TextView
                         android:id="@+id/text_data"
@@ -199,18 +199,18 @@
                         android:id="@+id/data_start_stop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="вылет"
-                        android:layout_marginStart="100dp"/>
+                        android:layout_marginStart="100dp"
+                        android:text="вылет" />
                 </LinearLayout>
 
 
                 <LinearLayout
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"> <!-- Центрирование элементов по вертикали -->
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
 
                     <TextView
                         android:id="@+id/text_number_night"
@@ -223,17 +223,17 @@
                         android:id="@+id/number_of_nights"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ночей"
-                        android:layout_marginStart="100dp"/>
+                        android:layout_marginStart="100dp"
+                        android:text="ночей" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"> <!-- Центрирование элементов по вертикали -->
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
 
                     <TextView
                         android:id="@+id/text_hotel"
@@ -246,17 +246,17 @@
                         android:id="@+id/hotelAdress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="адрес отеля толко начало его"
-                        android:layout_marginStart="100dp"/>
+                        android:layout_marginStart="100dp"
+                        android:text="адрес отеля толко начало его" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"> <!-- Центрирование элементов по вертикали -->
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
 
                     <TextView
                         android:id="@+id/text_room"
@@ -269,17 +269,17 @@
                         android:id="@+id/room"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="комната"
-                        android:layout_marginStart="100dp"/>
+                        android:layout_marginStart="100dp"
+                        android:text="комната" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"> <!-- Центрирование элементов по вертикали -->
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
 
                     <TextView
                         android:id="@+id/text_nutrition"
@@ -292,15 +292,83 @@
                         android:id="@+id/nutrion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ничего не включено"
-                        android:layout_marginStart="100dp"/>
+                        android:layout_marginStart="100dp"
+                        android:text="ничего не включено" />
                 </LinearLayout>
 
 
-                </LinearLayout>
             </LinearLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corners_background">
 
-        </ScrollView>
+                <TextView
+                    android:id="@+id/about_costumer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    android:text="Информация о покупателе"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phoneContainer"
+                    style="@style/Theme.MaterialComponents.DayNight.NoActionBar.Bridge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="10"
+                    app:helperText="Required"
+                    app:helperTextTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:passwordToggleEnabled="true"
+                    app:layout_constraintTop_toBottomOf="@id/about_costumer">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phoneText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number"
+                        android:inputType="numberPassword"
+                        android:lines="1"
+                        tools:ignore="MissingClass" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutEmail"
+                    style="@style/Theme.MaterialComponents.DayNight.NoActionBar.Bridge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    app:helperText="Required"
+                    app:helperTextTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/phoneContainer">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:lines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+</ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
