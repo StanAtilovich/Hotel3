@@ -44,7 +44,8 @@ class BookingFragment : Fragment() {
         binding = FragmentBookingBinding.inflate(inflater, container, false)
 
         binding.buttonBack.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_bookingFragment_to_numberFragment)
+
         }
 
         // Показывать запись о клиенте
@@ -122,6 +123,15 @@ class BookingFragment : Fragment() {
                     binding.idAdress.text = addressPart
                     binding.hotelAdress.text = addressPart
                 }
+                binding.tourCost.text = booking.tour_price.toString()
+                binding.gas.text = booking.fuel_charge.toString()
+                binding.gasService.text = booking.service_charge.toString()
+                val totalPrice = booking.tour_price + booking.fuel_charge + booking.service_charge
+                binding.allService2.text = totalPrice.toString()
+                binding.button4.text = "Оплатить "+totalPrice.toString()+ " ₽"
+                binding.button4.setOnClickListener {
+                    findNavController().navigate(R.id.action_bookingFragment_to_fragmentFinish)
+                }
             }
         }
     }
@@ -136,7 +146,7 @@ class BookingFragment : Fragment() {
 
         val validPhone = binding.phoneContainer.helperText == null
 
-        if (validEmail &&  validPhone){
+        if (validEmail && validPhone) {
             resetForm()
         } else {
             invalidForm()
@@ -154,7 +164,7 @@ class BookingFragment : Fragment() {
             .setTitle("Invalid Form")
             .setMessage(message)
 
-            .setPositiveButton("okey") {_,_ ->
+            .setPositiveButton("okey") { _, _ ->
                 //сдесь переход либо еще чтото
             }.show()
     }
@@ -166,12 +176,12 @@ class BookingFragment : Fragment() {
             .setTitle("Form Submited")
             .setMessage(message)
 
-            .setPositiveButton("okey") {_,_ ->
+            .setPositiveButton("okey") { _, _ ->
                 binding.editTextEmail.text = null
                 binding.phoneText.text = null
 
-                binding.phoneContainer.helperText =("сделал")
-                binding.textInputLayoutEmail.helperText =("сделал")
+                binding.phoneContainer.helperText = ("сделал")
+                binding.textInputLayoutEmail.helperText = ("сделал")
             }.show()
     }
 

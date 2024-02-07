@@ -578,8 +578,105 @@ android:visibility="gone"
                 android:hint="Срок действия паспорта"
                 />
         </LinearLayout>
-        </LinearLayout>
 
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
+
+                <TextView
+                    android:id="@+id/tour"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Тур" />
+
+                <TextView
+                    android:id="@+id/tour_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:text="цена" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
+
+                <TextView
+                    android:id="@+id/tour2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Топливный сбор"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/gas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:text="цена" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
+
+                <TextView
+                    android:id="@+id/service"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Сервисный сбор"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/gas_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:text="цена" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"> <!-- Центрирование элементов по вертикали -->
+
+                <TextView
+                    android:id="@+id/all_service"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="К оплате"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/all_service2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:text="цена" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </LinearLayout>
 
     </ScrollView>
 
