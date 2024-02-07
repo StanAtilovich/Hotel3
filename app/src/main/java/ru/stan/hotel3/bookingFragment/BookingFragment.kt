@@ -48,10 +48,35 @@ class BookingFragment : Fragment() {
         }
 
         // Показывать запись о клиенте
+        var isTouristDetailsVisible = false // Переменная для отслеживания видимости элемента
+
         binding.buttonAddTourist.setOnClickListener {
-            // Обработка нажатия на кнопку "Добавить туриста"
-            binding.touristDetailsLayout.visibility = View.VISIBLE
+            if (isTouristDetailsVisible) {
+                // Если элемент уже видим, то скрываем его
+                binding.touristDetailsLayout.visibility = View.GONE
+                isTouristDetailsVisible = false
+            } else {
+                // Если элемент скрыт, то показываем его
+                binding.touristDetailsLayout.visibility = View.VISIBLE
+                isTouristDetailsVisible = true
+            }
         }
+
+        var isTouristDetailsVisible2 = false // Переменная для отслеживания видимости элемента
+
+        binding.buttonAddSecondTourist.setOnClickListener {
+            if (isTouristDetailsVisible2) {
+                // Если элемент уже видим, то скрываем его
+                binding.touristDetailsLayout4.visibility = View.GONE
+                isTouristDetailsVisible2 = false
+            } else {
+                // Если элемент скрыт, то показываем его
+                binding.touristDetailsLayout4.visibility = View.VISIBLE
+                isTouristDetailsVisible2 = true
+            }
+        }
+
+
 
         setupRetrofit()
         phonefocusListener()

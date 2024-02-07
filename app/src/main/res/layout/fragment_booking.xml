@@ -373,7 +373,7 @@
 
                 <TextView
                     android:id="@+id/about_costumer2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="362dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Первый турист"
@@ -383,63 +383,201 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="DuplicateIds" />
 
-                <Button
+                <ImageView
                     android:id="@+id/buttonAddTourist"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Добавить туриста" />
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/down" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/touristDetailsLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="gone"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+android:visibility="gone"
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/editTextName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/rounded_corners_ser"
                     android:hint="Имя"
-                    />
+                    android:paddingStart="10dp"/>
 
                 <EditText
                     android:id="@+id/editTextSecondName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/rounded_corners_ser"
                     android:hint="Фамилия"
-                    />
+                    android:paddingStart="10dp"/>
 
                 <EditText
                     android:id="@+id/editBirth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/rounded_corners_ser"
                     android:hint="Дата рождения"
-                    />
+                    android:paddingStart="10dp"/>
 
                 <EditText
                     android:id="@+id/editGrazdan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/rounded_corners_ser"
                     android:hint="Гражданство"
-                    />
+                    android:paddingStart="10dp"/>
 
                 <EditText
                     android:id="@+id/editPassport"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/rounded_corners_ser"
                     android:hint="Паспорт"
-                    />
+                    android:paddingStart="10dp"/>
 
                 <EditText
                     android:id="@+id/editPassportFinish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/rounded_corners_ser"
                     android:hint="Срок действия паспорта"
-                   />
+                    />
             </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/touristDetailsLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_corners_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/about_costumer3"
+                android:layout_width="362dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Второй турист"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="DuplicateIds" />
+
+            <ImageView
+                android:id="@+id/buttonAddSecondTourist"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/down" />
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/touristDetailsLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+android:visibility="gone"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_corners_ser"
+                android:hint="Имя"
+                android:paddingStart="10dp"/>
+
+            <EditText
+                android:id="@+id/editTextSecondName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_corners_ser"
+                android:hint="Фамилия"
+                android:paddingStart="10dp"/>
+
+            <EditText
+                android:id="@+id/editBirth2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_corners_ser"
+                android:hint="Дата рождения"
+                android:paddingStart="10dp"/>
+
+            <EditText
+                android:id="@+id/editGrazdan2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_corners_ser"
+                android:hint="Гражданство"
+                android:paddingStart="10dp"/>
+
+            <EditText
+                android:id="@+id/editPassport2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_corners_ser"
+                android:hint="Паспорт"
+                android:paddingStart="10dp"/>
+
+            <EditText
+                android:id="@+id/editPassportFinish2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded_corners_ser"
+                android:hint="Срок действия паспорта"
+                />
+        </LinearLayout>
         </LinearLayout>
 
 
